@@ -28,10 +28,11 @@ namespace ReactWebApp.Controllers
             {
                 if(product != null)
                 {
-                    product.Supplier = await _databaseContext.Suppliers.FindAsync(product.Supplier);
+                    product.Supplier = await _databaseContext.Suppliers.FindAsync(product.SupplierId);
+                    product.Category = await _databaseContext.Categories.FindAsync(product.CategoryId);
                 }
             }
-            return Ok(await _databaseContext.Categories.ToListAsync());
+            return Ok(await _databaseContext.Products.ToListAsync());
         }
 
         [HttpPost]

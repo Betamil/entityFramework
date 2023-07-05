@@ -1,6 +1,7 @@
 import { Home } from "./components/Home";
-import { Categories } from "./components/Categories";
-import { AddCategory } from "./components/AddCategory";
+import { Categories } from "./components/Category/Categories";
+import { AddCategory } from "./components/Category/AddCategory";
+import { Products } from "./components/Product/Products";
 
 
 const AppRoutes = [
@@ -15,6 +16,10 @@ const AppRoutes = [
     {
         path: '/addCategory',
         element: <AddCategory />
+    },
+    {
+        path: '/products',
+        element: <Products />
     }
 ];
 

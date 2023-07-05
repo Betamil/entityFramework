@@ -295,30 +295,32 @@ namespace ReactWebApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryId")
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
+                        .HasMaxLength(40)
                         .HasColumnType("TEXT");
 
-                    b.Property<char?>("QuantityPerUnit")
+                    b.Property<string>("QuantityPerUnit")
+                        .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("RecorderLevel")
-                        .HasColumnType("INTEGER");
+                    b.Property<int>("RecorderLevel")
+                        .HasColumnType("bit");
 
-                    b.Property<int>("SupplierId")
+                    b.Property<int?>("SupplierId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("UnitPrice")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("money");
 
                     b.Property<int?>("UnitsInStock")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("smalint");
 
                     b.Property<int?>("UnitsOnOrder")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("smalint");
 
                     b.HasKey("Id");
 
@@ -485,15 +487,11 @@ namespace ReactWebApp.Migrations
                 {
                     b.HasOne("ReactWebApp.Entity.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.HasOne("ReactWebApp.Entity.Models.Supplier", "Supplier")
                         .WithMany()
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SupplierId");
 
                     b.Navigation("Category");
 
