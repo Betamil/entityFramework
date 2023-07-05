@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:44430",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "/Users/hugoribeyron/Documents/programation/entityFramework/ReactWebApp/ClientApp/",
+"MaxTimeoutInSeconds": "120"
+}
+}
