@@ -2,6 +2,7 @@ import { Home } from "./components/Home";
 import { Categories } from "./components/Category/Categories";
 import { AddCategory } from "./components/Category/AddCategory";
 import { Products } from "./components/Product/Products";
+import { AddProduct } from "./components/Product/AddProduct";
 
 
 const AppRoutes = [
@@ -20,6 +21,10 @@ const AppRoutes = [
     {
         path: '/products',
         element: <Products />
+    },
+    {
+        path: '/addProduct',
+        element: <AddProduct />
     }
 ];
 

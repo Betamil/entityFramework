@@ -53,26 +53,26 @@ export class AddCategory extends Component {
                     <input type="text" id="picture" onChange={this.handleChange} />
                 </label>
                 <br />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Enregistrer" />
             </form >
         );
     }
 
     async createCategory(data) {
-    await fetch('Category', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(response => {
-        if (response.status >= 200 && response.status < 300) {
-            return response;
-            console.log(response);
-            window.location.reload();
-        } else {
-            console.log('Somthing happened wrong');
-        }
-    }).catch(err => err);
-}
+        await fetch('Category', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            if (response.status >= 200 && response.status < 300) {
+                return response;
+                console.log(response);
+                window.location.reload();
+            } else {
+                console.log('Somthing happened wrong');
+            }
+        }).catch(err => err);
+    }
 }

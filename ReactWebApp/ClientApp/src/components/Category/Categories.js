@@ -52,9 +52,16 @@ export class Categories extends Component {
         );
     }
 
-    async allCategories() {
+     async allCategories() {
         const response = await fetch('Category');
         const data = await response.json();
         this.setState({ categories: data, loading: false });
     }
+}
+
+
+export const AllCategories = async () => {
+    const response = await fetch('Category');
+    const data = await response.json();
+    return data;
 }

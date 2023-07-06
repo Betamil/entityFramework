@@ -10,6 +10,7 @@ using ReactWebApp.Entity.Models;
 namespace ReactWebApp.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class ProductController : Controller
     {
 
@@ -36,11 +37,11 @@ namespace ReactWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Category>> AddProduct(Category category)
+        public async Task<ActionResult<Category>> AddProduct(Product product)
         {
-            _databaseContext.Categories.Add(category);
+            _databaseContext.Products.Add(product);
             await _databaseContext.SaveChangesAsync();
-            return Ok(category);
+            return Ok(product);
         }
     }
 }

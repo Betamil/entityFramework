@@ -21,7 +21,6 @@ export class Products extends Component {
                     <tr>
                         <th>Identifiant</th>
                         <th>Nom</th>
-                        <th>Fournisseur</th>
                         <th>Categorie</th>
                         <th>Quantité unitaire</th>
                         <th>Prix</th>
@@ -34,8 +33,7 @@ export class Products extends Component {
                         <tr>
                             <td>{products.id}</td>
                             <td>{products.productName}</td>
-                            <td>{products.Supplier?.companyName}</td>
-                            <td>{products.Category?.categoryName}</td>
+                            <td>{products.category.categoryName}</td>
                             <td>{products.quantityPerUnit}</td>
                             <td>{products.unitPrice}</td>
                             <td>{products.unitsInStock}</td>
