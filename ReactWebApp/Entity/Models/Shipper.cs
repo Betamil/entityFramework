@@ -9,7 +9,7 @@ public class Shipper
     public int Id { get; set; }
     [Required]
     [StringLength(40)]
-    public string CompanyName { get; set; }
+    public string? CompanyName { get; set; }
     [StringLength(24)]
-    public string Phone { get; set; }
+    public string? Phone { get; set; }
 }
